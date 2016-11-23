@@ -16,6 +16,9 @@ The recommended way to install composer packages is:
 
 ```
 $ composer require bakkerij/cakeadmin:dev-rewrite
+$ composer require friendsofcake/crud:^4.3
+$ composer require gourmet/knp-menu:~0.4
+$ composer require holt59/cakephp3-bootstrap-helpers:dev-master
 ```
 
 ## Load Plugin

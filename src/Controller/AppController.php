@@ -11,8 +11,24 @@ class AppController extends BaseController
 {
 
     use ControllerTrait;
-
     use CakeAdminTrait;
+    
+    // https://holt59.github.io/cakephp3-bootstrap-helpers/
+    public $helpers = [
+        'Html' => [
+            'className' => 'Bootstrap.BootstrapHtml',
+            'useCustomFileInput' => true
+        ],
+        'Form' => [
+            'className' => 'Bootstrap.BootstrapForm'
+        ],
+        'Paginator' => [
+            'className' => 'Bootstrap.BootstrapPaginator'
+        ],
+        'Modal' => [
+            'className' => 'Bootstrap.BootstrapModal'
+        ]
+    ];
 
     /**
      * Initialize AppController

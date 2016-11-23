@@ -57,6 +57,7 @@ class PostTypesController extends AppController
 
     public function beforeRender(Event $event)
     {
+        $this->viewBuilder()->layout('admin');
         $this->viewBuilder()->helpers(['Bakkerij/CakeAdmin.PostType' => [
             'data' => $this->postType
         ]]);
