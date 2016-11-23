@@ -34,3 +34,7 @@ Navigate to the new project's config/app.php and update your Datasources usernam
 $ bin/cake migrations migrate -p Bakkerij/CakeAdmin
 ```
 
+After migrations you will have a default Admin user with the following credentials:
+email - admin@test.com
+password - test
+
