@@ -15,7 +15,7 @@ trait CakeAdminTrait
     {
         $namespace = 'App\CakeAdmin';
 
-        if(class_exists($namespace)) {
+        if (class_exists($namespace)) {
             $init = new $namespace();
 
             $this->eventManager()->on($init);
@@ -23,18 +23,20 @@ trait CakeAdminTrait
 
         $this->__trigger('CakeAdmin.Controller.startup');
     }
-    
+
     public function buildMenu()
     {
         /** @var MenuItem $menu */
         $menu = $this->Menu->get('cakeadmin_main');
 
-        $menu->addChild('Dashboard', ['uri' => [
-            'plugin' => 'Bakkerij/CakeAdmin',
-            'prefix' => 'admin',
-            'controller' => 'Dashboard',
-            'action' => 'index'
-        ]]);
+        $menu->addChild('Dashboard', [
+            'uri' => [
+                'plugin' => 'Bakkerij/CakeAdmin',
+                'prefix' => 'admin',
+                'controller' => 'Dashboard',
+                'action' => 'index'
+            ]
+        ]);
 
         $this->addPostTypesToMenu();
 
@@ -49,13 +51,15 @@ trait CakeAdminTrait
         $postTypes = PostTypeRegistry::getAll();
 
         foreach ($postTypes as $postType) {
-            $menu->addChild($postType->name(), ['uri' => [
-                'plugin' => 'Bakkerij/CakeAdmin',
-                'prefix' => 'admin',
-                'controller' => 'PostTypes',
-                'action' => 'index',
-                'type' => $postType->slug()
-            ]]);
+            $menu->addChild($postType->name(), [
+                'uri' => [
+                    'plugin' => 'Bakkerij/CakeAdmin',
+                    'prefix' => 'admin',
+                    'controller' => 'PostTypes',
+                    'action' => 'index',
+                    'type' => $postType->slug()
+                ]
+            ]);
         }
     }
 
@@ -64,9 +68,9 @@ trait CakeAdminTrait
         /** @var MenuItem $menu */
         $menu = $this->Menu->get('cakeadmin_main');
 
-        $configurations = (array) Configure::read('CA.menu.main');
+        $configurations = (array)Configure::read('CA.menu.main');
 
-        foreach($configurations as $label => $options) {
+        foreach ($configurations as $label => $options) {
             $menu->addChild($label, $options);
         }
     }

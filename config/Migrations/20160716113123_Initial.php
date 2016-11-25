@@ -1,8 +1,10 @@
 <?php
+
 use Migrations\AbstractMigration;
 
 class Initial extends AbstractMigration
 {
+
     /**
      * Change Method.
      *
@@ -48,4 +50,6 @@ class Initial extends AbstractMigration
             ->addColumn('modified', 'datetime')
             ->create();
     }
+
 }
+  

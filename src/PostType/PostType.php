@@ -124,7 +124,7 @@ class PostType
         if ($name) {
             $this->_name = $name;
         }
-        if(!$this->_name) {
+        if (!$this->_name) {
             $this->_name = $this->table()->alias();
         }
         return $this->_name;
@@ -149,10 +149,10 @@ class PostType
      */
     public function slug($slug = null)
     {
-        if($slug) {
+        if ($slug) {
             $this->_slug = Text::slug($slug);
         }
-        if(!$this->_slug) {
+        if (!$this->_slug) {
             $this->_slug = Text::slug($this->name());
         }
         return $this->_slug;
@@ -169,10 +169,10 @@ class PostType
      */
     public function menu($menu = null)
     {
-        if($menu) {
-            $this->_menu = (bool) $menu;
+        if ($menu) {
+            $this->_menu = (bool)$menu;
         }
-        if(!$this->_menu) {
+        if (!$this->_menu) {
             $this->_menu = true;
         }
         return $this->_menu;
@@ -186,10 +186,10 @@ class PostType
      */
     public function description($description = null)
     {
-        if($description) {
+        if ($description) {
             $this->_description = $description;
         }
-        if(!$this->_description) {
+        if (!$this->_description) {
             $this->_description = true;
         }
         return $this->_description;
@@ -204,16 +204,16 @@ class PostType
      */
     public function action($action, $enabled = null)
     {
-        if(is_array($action)) {
-            foreach($action as $key => $value) {
+        if (is_array($action)) {
+            foreach ($action as $key => $value) {
                 $this->action($key, $value);
             }
         }
 
-        if($enabled !== null) {
-            $this->_actions[$action] = (bool) $enabled;
+        if ($enabled !== null) {
+            $this->_actions[$action] = (bool)$enabled;
         }
-        if(!array_key_exists($action, $this->_actions)) {
+        if (!array_key_exists($action, $this->_actions)) {
             $this->_actions[$action] = true;
         }
         return $this->_actions[$action];
@@ -247,10 +247,10 @@ class PostType
      */
     public function tableColumns(array $columns = null)
     {
-        if($columns) {
+        if ($columns) {
             $this->_columns = $this->_normalizeTableColumns($columns);
         }
-        if(!$this->_columns) {
+        if (!$this->_columns) {
             $this->_columns = $this->_generateTableColumns();
         }
         return $this->_columns;
@@ -264,10 +264,10 @@ class PostType
      */
     public function formFields(array $fields = null)
     {
-        if($fields) {
+        if ($fields) {
             $this->_fields = $this->_normalizeFormFields($fields);
         }
-        if(!$this->_fields) {
+        if (!$this->_fields) {
             $this->_fields = $this->_generateFormFields();
         }
         return $this->_fields;
@@ -281,10 +281,10 @@ class PostType
      */
     public function table($table = null)
     {
-        if($table) {
+        if ($table) {
             $this->_table = $table;
         }
-        if(!$this->_table) {
+        if (!$this->_table) {
             $this->_table = TableRegistry::get($this->model());
         }
         return $this->_table;
@@ -358,11 +358,11 @@ class PostType
         $columns[] = reset($pk);
         $columns[] = $table->displayField();
 
-        if($table->hasBehavior('Timestamp')) {
-            if($schema->column('created')) {
+        if ($table->hasBehavior('Timestamp')) {
+            if ($schema->column('created')) {
                 $columns[] = 'created';
             }
-            if($schema->column('modified')) {
+            if ($schema->column('modified')) {
                 $columns[] = 'modified';
             }
         }
