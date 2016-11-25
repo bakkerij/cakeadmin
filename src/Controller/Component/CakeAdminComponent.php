@@ -21,9 +21,9 @@ class CakeAdminComponent extends Component
 
     public function loadPostTypesFromConfig()
     {
-        $list = (array) Configure::read('CA.postTypes');
+        $list = (array)Configure::read('CA.postTypes');
 
-        foreach($list as $key => $value) {
+        foreach ($list as $key => $value) {
             PostTypeRegistry::register($key, $value);
         }
     }

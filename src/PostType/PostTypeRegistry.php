@@ -46,8 +46,8 @@ class PostTypeRegistry
     {
         $all = self::getAll();
 
-        foreach($all as $class => $type) {
-            if($type->slug() === $slug) {
+        foreach ($all as $class => $type) {
+            if ($type->slug() === $slug) {
                 return self::get($class);
             }
         }
@@ -64,7 +64,7 @@ class PostTypeRegistry
 
         $all = [];
 
-        foreach($list as $class) {
+        foreach ($list as $class) {
             $all[$class] = self::get($class);
         }
 

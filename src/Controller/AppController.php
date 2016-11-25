@@ -12,7 +12,7 @@ class AppController extends BaseController
 
     use ControllerTrait;
     use CakeAdminTrait;
-    
+
     // https://holt59.github.io/cakephp3-bootstrap-helpers/
     public $helpers = [
         'Html' => [

@@ -11,10 +11,11 @@ use \Cake\Event\Event;
  */
 class DashboardController extends AppController
 {
-  public function beforeRender(Event $event) {
-    parent::beforeRender($event);
-    $this->viewBuilder()->layout('admin');
-  }
+    public function beforeRender(Event $event)
+    {
+        parent::beforeRender($event);
+        $this->viewBuilder()->layout('admin');
+    }
 
     /**
      * Index method

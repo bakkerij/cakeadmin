@@ -16,15 +16,16 @@ The recommended way to install composer packages is:
 
 ```
 $ composer require bakkerij/cakeadmin:dev-rewrite
-$ composer require friendsofcake/crud:^4.3
-$ composer require gourmet/knp-menu:~0.4
-$ composer require holt59/cakephp3-bootstrap-helpers:dev-master
 ```
 
-## Load Plugin
+## Load Plugins
 
 ```
 $ bin/cake plugin load -b -r Bakkerij/CakeAdmin
+$ bin/cake plugin load Crud
+$ bin/cake plugin load Gourmet/KnpMenu
+$ bin/cake plugin load Bootstrap
+
 ```
 
 ## Update Database Info
@@ -38,6 +39,8 @@ $ bin/cake migrations migrate -p Bakkerij/CakeAdmin
 ```
 
 After migrations you will have a default Admin user with the following credentials:
-email - admin@test.com
-password - test
+
+Email - admin@test.com
+
+Password - test
 

@@ -10,8 +10,8 @@ trait PostTypesTrait
     {
         $actions = $this->postType->actions();
 
-        foreach($actions as $action => $state) {
-            if($state) {
+        foreach ($actions as $action => $state) {
+            if ($state) {
                 $this->Crud->enable($action);
             } else {
                 $this->Crud->disable($action);

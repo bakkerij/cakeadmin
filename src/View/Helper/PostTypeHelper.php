@@ -82,7 +82,7 @@ class PostTypeHelper extends Helper
 
     public function viewLink(EntityInterface $item)
     {
-        if(!$this->getPostType()->action('view')) {
+        if (!$this->getPostType()->action('view')) {
             return;
         }
 
@@ -98,7 +98,7 @@ class PostTypeHelper extends Helper
 
     public function editLink(EntityInterface $item)
     {
-        if(!$this->getPostType()->action('edit')) {
+        if (!$this->getPostType()->action('edit')) {
             return;
         }
 
@@ -114,7 +114,7 @@ class PostTypeHelper extends Helper
 
     public function deleteLink(EntityInterface $item)
     {
-        if(!$this->getPostType()->action('delete')) {
+        if (!$this->getPostType()->action('delete')) {
             return;
         }
 
